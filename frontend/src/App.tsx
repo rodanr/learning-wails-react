@@ -1,41 +1,7 @@
-import { useState } from 'react';
-
-import { Greet } from '../wailsjs/go/main/App';
-import './App.css';
-import logo from './assets/images/logo-universal.png';
-
 function App() {
-  const [resultText, setResultText] = useState(
-    'Please enter your name below 👇'
-  );
-  const [name, setName] = useState('');
-  const updateName = (e: React.ChangeEvent<HTMLInputElement>) =>
-    setName(e.target.value);
-  const updateResultText = (result: string) => setResultText(result);
-
-  function greet() {
-    Greet(name).then(updateResultText);
-  }
-
   return (
-    <div id="App">
-      <img src={logo} id="logo" alt="logo" />
-      <div id="result" className="result">
-        {resultText}
-      </div>
-      <div id="input" className="input-box">
-        <input
-          id="name"
-          className="input"
-          onChange={updateName}
-          autoComplete="off"
-          name="input"
-          type="text"
-        />
-        <button className="btn" onClick={greet}>
-          Greet
-        </button>
-      </div>
+    <div className="bg-gray-900 min-h-screen text-slate-100 flex justify-center items-center text-9xl">
+      <p>Hello World!</p>
     </div>
   );
 }
