@@ -1,14 +1,16 @@
 import { useState } from 'react';
-import logo from './assets/images/logo-universal.png';
-import './App.css';
+
 import { Greet } from '../wailsjs/go/main/App';
+import './App.css';
+import logo from './assets/images/logo-universal.png';
 
 function App() {
   const [resultText, setResultText] = useState(
     'Please enter your name below 👇'
   );
   const [name, setName] = useState('');
-  const updateName = (e: any) => setName(e.target.value);
+  const updateName = (e: React.ChangeEvent<HTMLInputElement>) =>
+    setName(e.target.value);
   const updateResultText = (result: string) => setResultText(result);
 
   function greet() {

@@ -1,9 +1,9 @@
-import globals from 'globals';
 import pluginJs from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import pluginReact from 'eslint-plugin-react';
 import prettierConfig from 'eslint-config-prettier';
 import prettierPlugin from 'eslint-plugin-prettier';
+import pluginReact from 'eslint-plugin-react';
+import globals from 'globals';
+import tseslint from 'typescript-eslint';
 
 export default [
   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
@@ -18,6 +18,12 @@ export default [
     },
     rules: {
       'prettier/prettier': 'error',
+      'react/react-in-jsx-scope': 'off',
+    },
+    settings: {
+      react: {
+        version: '18', // Automatically detect the React version
+      },
     },
   },
 ];
